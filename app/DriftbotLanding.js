@@ -215,6 +215,7 @@ export default function DriftbotLanding() {
   const [submitted, setSubmitted] = useState(false);
   const [bottomEmail, setBottomEmail] = useState("");
   const [bottomSubmitted, setBottomSubmitted] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleSubmit = (e, isBottom) => {
     e.preventDefault();
@@ -239,6 +240,29 @@ export default function DriftbotLanding() {
         ::selection { background: rgba(59,130,246,0.3); }
         input::placeholder { color: ${COLORS.gray500}; }
         button:hover { opacity: 0.92; }
+        @media (max-width: 768px) {
+          .desktop-nav { display: none !important; }
+          .mobile-menu-btn { display: flex !important; }
+          .mobile-nav { display: flex !important; }
+          .social-proof-grid { gap: 24px !important; }
+          .pricing-grid { flex-direction: column !important; align-items: center !important; }
+          .pricing-grid > div { min-width: 100% !important; }
+          .footer-inner { flex-direction: column !important; text-align: center !important; gap: 16px !important; }
+          .coming-soon-grid { grid-template-columns: 1fr !important; }
+          .section-pad { padding: 60px 0 !important; }
+          .hero-section { padding-top: 32px !important; padding-bottom: 48px !important; }
+          .email-form { flex-direction: column !important; }
+          .email-form input { min-width: 100% !important; }
+          .email-form button { width: 100% !important; }
+          .bottom-email-form { flex-direction: column !important; }
+          .bottom-email-form input { min-width: 100% !important; }
+          .bottom-email-form button { width: 100% !important; }
+          .final-cta-box { padding: 40px 20px !important; }
+        }
+        @media (min-width: 769px) {
+          .mobile-menu-btn { display: none !important; }
+          .mobile-nav { display: none !important; }
+        }
       `}</style>
 
       {/* NAV */}
@@ -247,7 +271,7 @@ export default function DriftbotLanding() {
           <div style={{ width: 34, height: 34, borderRadius: 8, background: "linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>🤖</div>
           <span style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 20 }}>drift<span style={{ color: COLORS.blue }}>bot</span><span style={{ color: COLORS.gray500, fontWeight: 400 }}>.ai</span></span>
         </div>
-        <div style={{ display: "flex", gap: 32, alignItems: "center" }}>
+        <div className="desktop-nav" style={{ display: "flex", gap: 32, alignItems: "center" }}>
           <a href="#features" style={{ color: COLORS.gray400, textDecoration: "none", fontSize: 14, fontWeight: 500 }}>Features</a>
           <a href="#pricing" style={{ color: COLORS.gray400, textDecoration: "none", fontSize: 14, fontWeight: 500 }}>Pricing</a>
           <a href="#faq" style={{ color: COLORS.gray400, textDecoration: "none", fontSize: 14, fontWeight: 500 }}>FAQ</a>
@@ -256,10 +280,28 @@ export default function DriftbotLanding() {
             textDecoration: "none", border: "none"
           }}>Get early access</a>
         </div>
+        {/* Mobile hamburger */}
+        <div className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)} style={{ display: "none", flexDirection: "column", gap: 5, cursor: "pointer", padding: 4 }}>
+          <span style={{ width: 22, height: 2, background: COLORS.gray300, borderRadius: 2, transition: "all 0.3s", transform: menuOpen ? "rotate(45deg) translateY(7px)" : "none" }} />
+          <span style={{ width: 22, height: 2, background: COLORS.gray300, borderRadius: 2, transition: "all 0.3s", opacity: menuOpen ? 0 : 1 }} />
+          <span style={{ width: 22, height: 2, background: COLORS.gray300, borderRadius: 2, transition: "all 0.3s", transform: menuOpen ? "rotate(-45deg) translateY(-7px)" : "none" }} />
+        </div>
       </nav>
+      {/* Mobile menu dropdown */}
+      {menuOpen && (
+        <div className="mobile-nav" style={{ display: "none", flexDirection: "column", gap: 16, padding: "16px 24px 24px", background: COLORS.bgCard, borderBottom: `1px solid ${COLORS.blueBorder}`, position: "relative", zIndex: 10 }}>
+          <a href="#features" onClick={() => setMenuOpen(false)} style={{ color: COLORS.gray300, textDecoration: "none", fontSize: 16, fontWeight: 500 }}>Features</a>
+          <a href="#pricing" onClick={() => setMenuOpen(false)} style={{ color: COLORS.gray300, textDecoration: "none", fontSize: 16, fontWeight: 500 }}>Pricing</a>
+          <a href="#faq" onClick={() => setMenuOpen(false)} style={{ color: COLORS.gray300, textDecoration: "none", fontSize: 16, fontWeight: 500 }}>FAQ</a>
+          <a href="#waitlist" onClick={() => setMenuOpen(false)} style={{
+            background: COLORS.blue, color: "#fff", padding: "12px 20px", borderRadius: 8, fontSize: 15, fontWeight: 600,
+            textDecoration: "none", border: "none", textAlign: "center"
+          }}>Get early access</a>
+        </div>
+      )}
 
       {/* HERO */}
-      <section style={{ position: "relative", overflow: "hidden", paddingTop: 60, paddingBottom: 80 }}>
+      <section className="hero-section" style={{ position: "relative", overflow: "hidden", paddingTop: 60, paddingBottom: 80 }}>
         <div style={{ position: "absolute", inset: 0, opacity: 0.03 }}>
           <div style={{ width: "200%", height: "200%", backgroundImage: `linear-gradient(${COLORS.blue} 1px, transparent 1px), linear-gradient(90deg, ${COLORS.blue} 1px, transparent 1px)`, backgroundSize: "30px 30px", animation: "gridScroll 20s linear infinite" }} />
         </div>
@@ -278,7 +320,7 @@ export default function DriftbotLanding() {
             Driftbot is an AI sales agent that lives on your website — engaging visitors, qualifying leads, and booking meetings on your calendar. 24/7.
           </p>
 
-          <form onSubmit={(e) => handleSubmit(e, false)} style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", maxWidth: 460, margin: "0 auto 16px" }}>
+          <form className="email-form" onSubmit={(e) => handleSubmit(e, false)} style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", maxWidth: 460, margin: "0 auto 16px" }}>
             {!submitted ? (
               <>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Enter your work email"
@@ -310,7 +352,7 @@ export default function DriftbotLanding() {
 
       {/* SOCIAL PROOF */}
       <section style={{ borderTop: `1px solid ${COLORS.blueBorder}`, borderBottom: `1px solid ${COLORS.blueBorder}`, padding: "40px 0" }}>
-        <div style={{ ...section, display: "flex", justifyContent: "center", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
+        <div className="social-proof-grid" style={{ ...section, display: "flex", justifyContent: "center", alignItems: "center", gap: 60, flexWrap: "wrap" }}>
           {[
             { n: 500, s: "+", label: "Businesses on waitlist" },
             { n: 93, s: "%", label: "Faster response time" },
@@ -428,7 +470,7 @@ export default function DriftbotLanding() {
             <p style={{ fontSize: 16, color: COLORS.gray400 }}>Start free during beta. No credit card required.</p>
           </div>
 
-          <div style={{ display: "flex", gap: 20, flexWrap: "wrap", justifyContent: "center" }}>
+          <div className="pricing-grid" style={{ display: "flex", gap: 20, flexWrap: "wrap", justifyContent: "center" }}>
             <PricingCard name="Starter" price="49" desc="For small teams getting started" popular={false}
               features={[
                 "1 AI agent",
@@ -490,7 +532,7 @@ export default function DriftbotLanding() {
             <p style={{ fontSize: 16, color: COLORS.gray400 }}>We're building fast. Here's what's next on the roadmap.</p>
           </div>
 
-          <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 14 }}>
+          <div className="coming-soon-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))", gap: 14 }}>
             <ComingSoonItem icon="🔌" title="More CRM integrations" desc="Pipedrive, Zoho, Monday.com, and more. Connect Driftbot to whatever CRM your team uses." />
             <ComingSoonItem icon="🌐" title="Multi-language support" desc="Let Driftbot speak your customers' language. Auto-detect and respond in 20+ languages." />
             <ComingSoonItem icon="🏷️" title="White-label option" desc="Remove all Driftbot branding and make it fully yours. Perfect for agencies reselling to clients." />
@@ -523,7 +565,7 @@ export default function DriftbotLanding() {
       {/* FINAL CTA */}
       <section id="waitlist" style={{ padding: "100px 0 120px" }}>
         <div style={section}>
-          <div style={{
+          <div className="final-cta-box" style={{
             background: `linear-gradient(135deg, rgba(59,130,246,0.1) 0%, rgba(59,130,246,0.03) 100%)`,
             border: `1px solid rgba(59,130,246,0.2)`, borderRadius: 20, padding: "60px 40px", textAlign: "center", position: "relative", overflow: "hidden"
           }}>
@@ -535,7 +577,7 @@ export default function DriftbotLanding() {
               <p style={{ fontSize: 17, color: COLORS.gray400, maxWidth: 500, margin: "0 auto 32px", lineHeight: 1.6 }}>
                 Join the waitlist today and be the first to get access when we launch. Early users get lifetime pricing.
               </p>
-              <form onSubmit={(e) => handleSubmit(e, true)} style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", maxWidth: 460, margin: "0 auto" }}>
+              <form className="bottom-email-form" onSubmit={(e) => handleSubmit(e, true)} style={{ display: "flex", gap: 10, justifyContent: "center", flexWrap: "wrap", maxWidth: 460, margin: "0 auto" }}>
                 {!bottomSubmitted ? (
                   <>
                     <input type="email" value={bottomEmail} onChange={(e) => setBottomEmail(e.target.value)} placeholder="Enter your work email"
@@ -562,7 +604,7 @@ export default function DriftbotLanding() {
 
       {/* FOOTER */}
       <footer style={{ borderTop: `1px solid ${COLORS.blueBorder}`, padding: "40px 0" }}>
-        <div style={{ ...section, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
+        <div className="footer-inner" style={{ ...section, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
             <span style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 16 }}>drift<span style={{ color: COLORS.blue }}>bot</span><span style={{ color: COLORS.gray500, fontWeight: 400 }}>.ai</span></span>
           </div>
