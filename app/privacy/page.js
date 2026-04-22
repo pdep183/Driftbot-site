@@ -287,7 +287,7 @@ export default function PrivacyPage() {
           </div>
           <div style={{ fontSize: 13, color: COLORS.gray500 }}>© 2026 Driftbot AI Inc. All rights reserved.</div>
           <div style={{ display: "flex", gap: 24 }}>
-            <a href="#" style={{ color: COLORS.gray500, textDecoration: "none", fontSize: 13 }}>Privacy</a>
+            <a href="/privacy" style={{ color: COLORS.gray500, textDecoration: "none", fontSize: 13 }}>Privacy</a>
             <a href="#" style={{ color: COLORS.gray500, textDecoration: "none", fontSize: 13 }}>Terms</a>
             <a href="#" style={{ color: COLORS.gray500, textDecoration: "none", fontSize: 13 }}>Contact</a>
           </div>
