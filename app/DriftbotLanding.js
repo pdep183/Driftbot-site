@@ -611,7 +611,7 @@ export default function DriftbotLanding() {
           <div style={{ fontSize: 13, color: COLORS.gray500 }}>© 2026 Driftbot AI Inc. All rights reserved.</div>
           <div style={{ display: "flex", gap: 24 }}>
             <a href="/privacy" style={{ color: COLORS.gray500, textDecoration: "none", fontSize: 13 }}>Privacy</a>
-            <a href="#" style={{ color: COLORS.gray500, textDecoration: "none", fontSize: 13 }}>Terms</a>
+            <a href="/terms" style={{ color: COLORS.gray500, textDecoration: "none", fontSize: 13 }}>Terms</a>
             <a href="#" style={{ color: COLORS.gray500, textDecoration: "none", fontSize: 13 }}>Contact</a>
           </div>
         </div>
