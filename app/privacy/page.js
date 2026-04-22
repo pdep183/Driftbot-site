@@ -113,7 +113,7 @@ export default function PrivacyPage() {
           <h1 style={{ fontFamily: "'Outfit', sans-serif", fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 700, lineHeight: 1.1, letterSpacing: "-0.02em", marginBottom: 16 }}>
             Privacy Policy
           </h1>
-          <p style={{ fontSize: 15, color: COLORS.gray500 }}>Effective date: April 2026 · Driftbot AI · Montreal, Quebec, Canada</p>
+          <p style={{ fontSize: 15, color: COLORS.gray500 }}>Effective date: April 2026 · Driftbot AI · Ontario, Canada</p>
         </div>
       </div>
 
@@ -126,7 +126,7 @@ export default function PrivacyPage() {
         </div>
 
         <Section title="1. Who We Are">
-          <p>Driftbot AI is a company incorporated in Montreal, Quebec, Canada. We operate the Driftbot platform — an AI-powered sales agent that businesses embed on their websites to engage visitors, qualify leads, and book meetings.</p>
+          <p>Driftbot AI is a company incorporated in Ontario, Canada. We operate the Driftbot platform — an AI-powered sales agent that businesses embed on their websites to engage visitors, qualify leads, and book meetings.</p>
           <p style={{ marginTop: 12 }}>When this policy refers to <strong style={{ color: COLORS.white }}>"Driftbot," "we," "us,"</strong> or <strong style={{ color: COLORS.white }}>"our,"</strong> it means Driftbot AI. When it refers to <strong style={{ color: COLORS.white }}>"you,"</strong> it means either a business customer using our platform or an end user visiting a website that has Driftbot installed.</p>
         </Section>
 
@@ -272,7 +272,7 @@ export default function PrivacyPage() {
           <p>If you have any questions about this privacy policy or how we handle your data, please reach out:</p>
           <div style={{ background: COLORS.bgCard, border: `1px solid ${COLORS.blueBorder}`, borderRadius: 12, padding: "24px", marginTop: 16, display: "flex", flexDirection: "column", gap: 8 }}>
             <div style={{ fontWeight: 600, color: COLORS.white, fontFamily: "'Outfit', sans-serif" }}>Driftbot AI</div>
-            <div style={{ color: COLORS.gray400, fontSize: 14 }}>Montreal, Quebec, Canada</div>
+            <div style={{ color: COLORS.gray400, fontSize: 14 }}>Ontario, Canada</div>
             <a href="mailto:support@driftbot.ai" style={{ color: COLORS.blueLight, textDecoration: "none", fontSize: 14 }}>support@driftbot.ai</a>
           </div>
         </Section>
