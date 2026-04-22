@@ -278,7 +278,7 @@ export default function DriftbotLanding() {
           <a href="#waitlist" style={{
             background: COLORS.blue, color: "#fff", padding: "8px 20px", borderRadius: 8, fontSize: 13, fontWeight: 600,
             textDecoration: "none", border: "none"
-          }}>Get early access</a>
+          }}>Get in contact</a>
         </div>
         {/* Mobile hamburger */}
         <div className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)} style={{ display: "none", flexDirection: "column", gap: 5, cursor: "pointer", padding: 4 }}>
@@ -296,7 +296,7 @@ export default function DriftbotLanding() {
           <a href="#waitlist" onClick={() => setMenuOpen(false)} style={{
             background: COLORS.blue, color: "#fff", padding: "12px 20px", borderRadius: 8, fontSize: 15, fontWeight: 600,
             textDecoration: "none", border: "none", textAlign: "center"
-          }}>Get early access</a>
+          }}>Get in contact</a>
         </div>
       )}
 
@@ -331,7 +331,7 @@ export default function DriftbotLanding() {
                 <button type="submit" style={{
                   padding: "14px 28px", borderRadius: 10, border: "none", background: COLORS.blue, color: "#fff",
                   fontWeight: 600, fontSize: 15, cursor: "pointer", fontFamily: "'DM Sans', sans-serif", whiteSpace: "nowrap"
-                }}>Get early access</button>
+                }}>Get in contact</button>
               </>
             ) : (
               <div style={{ display: "flex", alignItems: "center", gap: 8, background: COLORS.greenDim, border: `1px solid rgba(16,185,129,0.3)`, borderRadius: 10, padding: "14px 24px" }}>
@@ -588,7 +588,7 @@ export default function DriftbotLanding() {
                     <button type="submit" style={{
                       padding: "14px 28px", borderRadius: 10, border: "none", background: COLORS.blue, color: "#fff",
                       fontWeight: 600, fontSize: 15, cursor: "pointer", fontFamily: "'DM Sans', sans-serif", whiteSpace: "nowrap"
-                    }}>Get early access</button>
+                    }}>Get in contact</button>
                   </>
                 ) : (
                   <div style={{ display: "flex", alignItems: "center", gap: 8, background: COLORS.greenDim, border: `1px solid rgba(16,185,129,0.3)`, borderRadius: 10, padding: "14px 24px" }}>
