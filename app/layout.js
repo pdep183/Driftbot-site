@@ -1,4 +1,7 @@
 export const metadata = {
+  icons: {
+    icon: "/logo-icon.svg",
+  },
   title: "Driftbot.ai — Turn Every Visitor Into a Booked Meeting",
   description: "Driftbot is an AI sales agent that lives on your website — engaging visitors, qualifying leads, and booking meetings on your calendar. 24/7.",
   openGraph: {

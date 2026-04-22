@@ -267,9 +267,8 @@ export default function DriftbotLanding() {
 
       {/* NAV */}
       <nav style={{ ...section, padding: "20px 24px", display: "flex", justifyContent: "space-between", alignItems: "center", position: "relative", zIndex: 10 }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-          <div style={{ width: 34, height: 34, borderRadius: 8, background: "linear-gradient(135deg, #3B82F6 0%, #2563EB 100%)", display: "flex", alignItems: "center", justifyContent: "center", fontSize: 18 }}>🤖</div>
-          <span style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 20 }}>drift<span style={{ color: COLORS.blue }}>bot</span><span style={{ color: COLORS.gray500, fontWeight: 400 }}>.ai</span></span>
+        <div style={{ display: "flex", alignItems: "center" }}>
+          <img src="/logo-text.svg" alt="Driftbot" style={{ height: 28, width: "auto" }} />
         </div>
         <div className="desktop-nav" style={{ display: "flex", gap: 32, alignItems: "center" }}>
           <a href="#features" style={{ color: COLORS.gray400, textDecoration: "none", fontSize: 14, fontWeight: 500 }}>Features</a>
@@ -605,8 +604,8 @@ export default function DriftbotLanding() {
       {/* FOOTER */}
       <footer style={{ borderTop: `1px solid ${COLORS.blueBorder}`, padding: "40px 0" }}>
         <div className="footer-inner" style={{ ...section, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 16 }}>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ fontFamily: "'Outfit', sans-serif", fontWeight: 700, fontSize: 16 }}>drift<span style={{ color: COLORS.blue }}>bot</span><span style={{ color: COLORS.gray500, fontWeight: 400 }}>.ai</span></span>
+          <div style={{ display: "flex", alignItems: "center" }}>
+            <img src="/logo-text.svg" alt="Driftbot" style={{ height: 22, width: "auto" }} />
           </div>
           <div style={{ fontSize: 13, color: COLORS.gray500 }}>© 2026 Driftbot AI Inc. All rights reserved.</div>
           <div style={{ display: "flex", gap: 24 }}>
